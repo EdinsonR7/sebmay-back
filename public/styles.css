@@ -207,61 +207,71 @@ footer {
 
 /* ==== Formularios ==== */
 .form-container {
-  background   : white;
-  padding      : 25px;
-  border-radius: 8px;
-  box-shadow   : 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width    : 600px;
-  margin       : 20px auto;
+  background: white;
+  padding: 40px 35px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-width: 650px;
+  margin: 40px auto;
+  border: 1px solid #f0f0f0;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .form-group label {
-  display      : block;
-  margin-bottom: 8px;
-  font-weight  : 600;
-  color        : #333;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #222;
+  font-size: 15px;
 }
 
 .form-control {
-  width        : 100%;
-  padding      : 10px;
-  border       : 1px solid #ddd;
-  border-radius: 4px;
-  font-size    : 16px;
-  transition   : border-color 0.2s;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: all 0.25s ease;
 }
 
 .form-control:focus {
   border-color: #004aad;
-  outline     : none;
-  box-shadow  : 0 0 0 2px rgba(0, 74, 173, 0.1);
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
 }
 
 select.form-control {
   background-color: white;
-  cursor          : pointer;
+  cursor: pointer;
 }
 
+/* Botones */
 .form-buttons {
-  margin-top     : 30px;
-  display        : flex;
-  gap            : 10px;
+  margin-top: 35px;
+  display: flex;
+  gap: 15px;
   justify-content: flex-end;
 }
 
 .btn-primary {
-  background   : #004aad;
-  color        : white;
-  border       : none;
-  padding      : 10px 20px;
-  border-radius: 4px;
-  cursor       : pointer;
-  font-size    : 16px;
-  transition   : background-color 0.2s;
+  background: #004aad;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.25s;
 }
 
 .btn-primary:hover {
@@ -269,39 +279,48 @@ select.form-control {
 }
 
 .btn-secondary {
-  background     : #6c757d;
-  color          : white;
-  border         : none;
-  padding        : 10px 20px;
-  border-radius  : 4px;
-  cursor         : pointer;
-  font-size      : 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
   text-decoration: none;
-  transition     : background-color 0.2s;
+  transition: background-color 0.25s;
 }
 
 .btn-secondary:hover {
   background: #5a6268;
 }
 
-/* Estilos para mensajes de validación */
+/* Estilos para mensajes */
 .form-error {
-  color     : #dc3545;
-  font-size : 14px;
+  color: #dc3545;
+  font-size: 14px;
   margin-top: 5px;
 }
 
 .form-success {
-  color     : #28a745;
-  font-size : 14px;
+  color: #28a745;
+  font-size: 14px;
   margin-top: 5px;
 }
 
-/* Estilos responsivos para el formulario */
+/* ==== Responsividad ==== */
 @media (max-width: 768px) {
   .form-container {
-    padding: 15px;
-    margin : 10px;
+    padding: 25px 20px;
+    margin: 20px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-control {
+    font-size: 15px;
+    padding: 12px;
   }
 
   .form-buttons {
@@ -310,7 +329,15 @@ select.form-control {
 
   .form-buttons button,
   .form-buttons a {
-    width        : 100%;
+    width: 100%;
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
   }
 }
