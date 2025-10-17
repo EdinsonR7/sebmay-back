@@ -31,7 +31,6 @@ main {
   margin   : auto;
 }
 
-/* ==== Header de sección con botón ==== */
 .section-header {
   display        : flex;
   justify-content: space-between;
@@ -46,7 +45,6 @@ main {
   color : #333;
 }
 
-/* ==== Botones ==== */
 .btn {
   background     : #28a745;
   color          : white;
@@ -102,7 +100,6 @@ main {
   background: #c82333;
 }
 
-
 .table-container {
   background   : white;
   border-radius: 8px;
@@ -114,6 +111,25 @@ main {
 .table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background   : #888;
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* ==== Tabla ==== */
@@ -144,6 +160,10 @@ td {
   color    : #333;
 }
 
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
 tr:hover {
   background: #f8f9fa;
 }
@@ -155,164 +175,9 @@ tr:last-child td {
 
 td:last-child,
 th:last-child {
-  text-align: center;
+  text-align : center;
   white-space: nowrap;
 }
-
-.no-data {
-  text-align: center;
-  padding   : 40px 20px;
-  color     : #6c757d;
-  font-size : 16px;
-}
-
-footer {
-  text-align: center;
-  padding   : 15px;
-  background: #004aad;
-  color     : white;
-  margin-top: 40px;
-  width     : 100%;
-}
-
-@media (max-width: 768px) {
-  main {
-    padding: 15px;
-  }
-
-  .section-header {
-    flex-direction: column;
-    align-items   : flex-start;
-  }
-
-  .btn {
-    width     : 100%;
-    text-align: center;
-  }
-
-  .table-container {
-    margin-top   : 15px;
-    border-radius: 6px;
-  }
-
-  table {
-    min-width: 500px;
-    font-size: 13px;
-  }
-
-  th,
-  td {
-    padding: 10px 8px;
-  }
-
-  th {
-    font-size: 13px;
-  }
-
-  td {
-    font-size: 13px;
-  }
-
-  .btn-edit,
-  .btn-delete {
-    padding  : 5px 8px;
-    font-size: 12px;
-  }
-
-  .table-wrapper::after {
-    content   : '';
-    position  : absolute;
-    top       : 0;
-    right     : 0;
-    bottom    : 0;
-    width     : 30px;
-    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
-    pointer-events: none;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 10px;
-  }
-
-  .section-header h2 {
-    font-size: 20px;
-  }
-
-  .btn {
-    padding  : 10px 16px;
-    font-size: 14px;
-  }
-
-  table {
-    min-width: 450px;
-  }
-
-  th,
-  td {
-    padding: 8px 6px;
-  }
-
-  .btn-edit,
-  .btn-delete {
-    padding  : 4px 6px;
-    font-size: 11px;
-  }
-}
-
-.badge {
-  padding      : 4px 8px;
-  border-radius: 12px;
-  font-size    : 12px;
-  font-weight  : 500;
-}
-
-.badge-success {
-  background: #d4edda;
-  color     : #155724;
-}
-
-.badge-warning {
-  background: #fff3cd;
-  color     : #856404;
-}
-
-.badge-danger {
-  background: #f8d7da;
-  color     : #721c24;
-}
-
-tbody tr {
-  transition: background-color 0.2s ease;
-}
-
-
-.table-wrapper {
-  scroll-behavior: smooth;
-}
-
-.table-wrapper {
-  position: relative;
-}
-
-.table-wrapper::-webkit-scrollbar {
-  height: 8px;
-}
-
-.table-wrapper::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.table-wrapper::-webkit-scrollbar-thumb {
-  background   : #888;
-  border-radius: 4px;
-}
-
-.table-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 
 .link-nombre {
   color          : #007bff;
@@ -326,19 +191,17 @@ tbody tr {
   text-decoration: underline;
 }
 
-
 .action-buttons {
-  display    : flex;
-  gap        : 8px;
-  align-items: center;
-  flex-wrap  : wrap;
+  display        : flex;
+  gap            : 8px;
+  align-items    : center;
+  flex-wrap      : wrap;
   justify-content: center;
 }
 
 .action-buttons form {
   margin: 0;
 }
-
 
 .badge {
   padding      : 4px 10px;
@@ -376,22 +239,83 @@ tbody tr {
   font-style : italic;
 }
 
+footer {
+  text-align: center;
+  padding   : 15px;
+  background: #004aad;
+  color     : white;
+  margin-top: 40px;
+  width     : 100%;
+}
+
 @media (max-width: 768px) {
-  .action-buttons {
-    flex-direction: column;
-    gap           : 5px;
+  main {
+    padding: 15px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+  }
+
+  .btn {
+    width     : 100%;
+    text-align: center;
+  }
+
+  .table-container {
+    margin-top   : 15px;
+    border-radius: 6px;
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  th,
+  td {
+    padding  : 10px 8px;
+    font-size: 13px;
   }
 
   .btn-edit,
   .btn-delete {
-    width     : 100%;
-    text-align: center;
+    padding  : 5px 8px;
+    font-size: 12px;
+    width    : 100%;
+  }
+
+  .action-buttons {
+    gap: 5px;
   }
 }
 
 @media (max-width: 480px) {
+  main {
+    padding: 10px;
+  }
+
   .section-header h2 {
     font-size: 18px;
+  }
+
+  .btn {
+    padding  : 10px 16px;
+    font-size: 14px;
+  }
+
+  table {
+    min-width: 450px;
+  }
+
+  th,
+  td {
+    padding: 8px 6px;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    padding  : 4px 6px;
+    font-size: 11px;
   }
 
   .badge {
