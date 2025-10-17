@@ -351,6 +351,7 @@ select.form-control {
     padding      : 20px;
     margin       : 15px;
     border-radius: 6px;
+    width: 0;
   }
 
   .form-group {
@@ -369,7 +370,7 @@ select.form-control {
 
   .form-buttons button,
   .form-buttons a {
-    width: 100%;
+    width: 0;
   }
 
   .btn-primary,
