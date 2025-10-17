@@ -392,6 +392,7 @@ footer {
   padding-top: 20px;
   border-top : 2px solid #eee;
   display    : flex;
+  justify-content: center;
   gap        : 10px;
 }
 
@@ -429,7 +430,7 @@ footer {
   }
 
   .detail-actions a {
-    width     : 100%;
+    width     : auto;
     text-align: center;
   }
 }
