@@ -1,0 +1,56 @@
+<%- layout('layouts/main') %>
+
+  <div class="product-details">
+    <h1 class="product-title">
+      <%= producto.nombre %>
+        <span class="detail-badge badge-<%= producto.tipo %>">
+          <%= producto.tipo.charAt(0).toUpperCase() + producto.tipo.slice(1) %>
+        </span>
+    </h1>
+
+    <div class="detail-price">
+      $<%= parseFloat(producto.precio || 0).toFixed(2) %>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-item">
+        <span class="detail-label">ID</span>
+        <span class="detail-value">
+          <%= producto.id %>
+        </span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-label">Categoría</span>
+        <span class="detail-value">
+          <%= producto.categoria || 'No especificada' %>
+        </span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-label">Stock</span>
+        <span class="detail-value">
+          <%= producto.stock || '0' %> unidades
+        </span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-label">Proveedor</span>
+        <span class="detail-value">
+          <%= producto.proveedor || 'No especificado' %>
+        </span>
+      </div>
+
+      <div class="detail-description">
+        <span class="detail-label">Descripción</span>
+        <div class="detail-value">
+          <%= producto.descripcion || 'Sin descripción disponible' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-actions">
+      <a href="/productos" class="btn-secondary">⬅️ Volver al listado</a>
+      <a href="/productos/<%= producto.id %>/edit" class="btn-primary">✏️ Editar</a>
+    </div>
+  </div>
