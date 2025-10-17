@@ -27,6 +27,7 @@ app.get("/", (req, res) => res.redirect("/productos"));
 app.use("/productos", productRoutes);
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () =>
-  console.log(`🚀 SebMay (SSR) corriendo en puerto ${PORT}`)
-);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 SebMay corriendo en puerto ${PORT}`);
+});
+
