@@ -46,7 +46,7 @@
               <td>
                 <div class="action-buttons">
                   <a href="/productos/<%= p.id %>/edit" class="btn-edit">✏️ Editar</a>
-                  <form action="/productos/<%= p.id %>?_method=DELETE" method="POST" style="display:inline;">
+                  <form action="/productos/<%= p.id %>?_method=DELETE" method="POST" style="display:inline; width: 100%;">
                     <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar <%= p.nombre %>?')">
                       🗑️ Eliminar
                     </button>
